@@ -3,16 +3,19 @@
 function devolverPrimerElemento(array) {
   // Devuelve el primer elemento de un array
   // Tu código:
+  return array[0];
 }
 
 function devolverUltimoElemento(array) {
   // Devuelve el último elemento de un array
   // Tu código:
+  return array[array.length -1 ];
 }
 
 function obtenerLargoDelArray(array) {
   // Devuelve el largo de un array
   // Tu código:
+  return array.length;
 }
 
 function incrementarPorUno(array) {
@@ -20,12 +23,24 @@ function incrementarPorUno(array) {
   // Aumenta cada entero por 1
   // y devuelve el array
   // Tu código:
+  //for (var i = 0; i < array.length ; i++){
+  //  array[i] = array[i] + 1;
+  //}
+  //return array;
+  var nuevoArray = [];
+  for (var i = 0; i < array.length ; i++){
+    nuevoArray.push(array[i] + 1);
+  }
+  return nuevoArray;
 }
 
 function agregarItemAlFinalDelArray(array, elemento) {
   // Añade el "elemento" al final del array
   // y devuelve el array
   // Tu código:
+  array.push(elemento);
+  return array;
+
 }
 
 function agregarItemAlComienzoDelArray(array, elemento) {
@@ -33,6 +48,8 @@ function agregarItemAlComienzoDelArray(array, elemento) {
   // y devuelve el array
   // Pista: usa el método `.unshift`
   // Tu código:
+  array.unshift(elemento);
+  return array;
 }
 
 function dePalabrasAFrase(palabras) {
@@ -41,30 +58,68 @@ function dePalabrasAFrase(palabras) {
   // con espacios entre cada palabra
   // Ejemplo: ['Hello', 'world!'] -> 'Hello world!'
   // Tu código:
+  var palabra = '';
+  for (var i = 0 ; i < palabras.length ; i++){
+    if (i < (palabras.length -1)){
+      palabra = palabra + palabras[i] + " ";
+    }else{
+        palabra = palabra + palabras[i];
+         }
+  }
+    return palabra;
+    //return palabras.join(' ');
 }
 
 function arrayContiene(array, elemento) {
   // Comprueba si el elemento existe dentro de "array"
   // Devuelve "true" si está, o "false" si no está
   // Tu código:
+  for (var i = 0; i < array.length; i++){
+    if( array[i] === elemento){
+      return true;
+    }
+  }return false;
 }
 
 function agregarNumeros(numeros) {
   // "array" debe ser una matriz de enteros (int/integers)
   // Suma todos los enteros y devuelve el valor
   // Tu código:
+  var num= 0;
+  for (var i = 0; i < numeros.length; i++){
+   // if (i <= (numeros.length -1)){
+   //   num = num + numeros[i];
+   // }
+   num = num + numeros[i];
+  }
+  return num;
 }
 
 function promedioResultadosTest(resultadosTest) {
   // "resultadosTest" debe ser una matriz de enteros (int/integers)
   // Itera (en un bucle) los elementos del array, calcula y devuelve el promedio de puntajes
   // Tu código:
+   var num= 0;
+  for (var i = 0; i < resultadosTest.length; i++){
+  num = num + resultadosTest[i];
+  }
+   var promedioResultadosTest= num / resultadosTest.length;
+  return promedioResultadosTest;
+  //var promedio = agregarNumeros(resultadosTest) / resultadosTest.length;
+  //return promedio;
 }
 
 function numeroMasGrande(numeros) {
   // "numeros" debe ser una matriz de enteros (int/integers)
   // Devuelve el número más grande
   // Tu código:
+  var mayor = 0;
+  for (var i = 0; i < numeros.length; i++){
+    if (mayor < numeros[i]){
+      mayor = numeros[i];
+    }
+  }
+  return mayor;
 }
 
 function multiplicarArgumentos() {
@@ -72,6 +127,15 @@ function multiplicarArgumentos() {
   // Si no se pasan argumentos devuelve 0
   // Si se pasa un argumento, simplemente devuélvelo
   // Tu código:
+  var argumento = 1;
+  if (arguments.length < 1){
+    return 0;
+  }
+
+  for (var i = 0; i < arguments.length; i++){
+    argumento= argumento * arguments[i];
+  }
+  return argumento;
 }
 
 // No modificar nada debajo de esta línea
