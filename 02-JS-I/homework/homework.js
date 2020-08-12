@@ -195,7 +195,7 @@ function obtenerAreaRectangulo(alto, ancho) {
   // Tu código:
   var area = ancho * alto;
   return area;
-}
+} 
 
 
 // No modificar nada debajo de esta línea
